@@ -1,3 +1,7 @@
+**Note: We're temporarily locking this repository to stop abuse. We'll prune and reopen it soon.**
+
+---
+
 # Exercism Frontend Developer Job: Project
 
 Thanks for wanting to apply for the Frontend Developer Job role! 🥳
@@ -19,15 +23,24 @@ It should look like this:
 ## Styling
 
 A key criteria for this job role is how accurately you can replicate designs.
-You can access the Figma file with all the information you should need at https://www.figma.com/file/qvDOfGC4uLDUcjRDaVMIrU/Exercism-Front-end-Job-Project?node-id=0%3A1 (note: you need to be logged into Figma to see the comments).
+You can access the Figma file with all the information you should need at [https://www.figma.com/file/qvDOfGC4uLDUcjRDaVMIrU/Exercism-Front-end-Job-Project?node-id=0%3A1](https://www.figma.com/file/qvDOfGC4uLDUcjRDaVMIrU/Exercism-Front-end-Job-Project?node-id=0%3A1) (note: you need to be logged into Figma to see the comments).
 Note the comments on various components for more information.
 
 Ideally, you'll use Tailwind 3 for the CSS, but plain CSS is totally fine too.
+
+Some of the questions asked and answered:
+
+- Loading indicator: animate as you see fit.
+- Testimonials section height: implement as you see fit.
+- Track dropdown height: implement as you see fit, we strongly recommend limiting the height.
+- Pagination: an example implementation of a similar design: [see exercism.org](https://exercism.org/profiles/ErikSchierboom/contributions).
+- Responsive design: No hard requirement, we don't provide a mobile/tablet/4k design for this project.
 
 ## Functionality
 
 The functionality should be implemented using React.
 Ideally, you'll use TypeScript, but JavaScript is fine too.
+Your solution should work at least on evergreen browsers' current version and one version back.
 
 Please provide some tests as well.
 
@@ -45,21 +58,25 @@ The areas that should be implemented are:
 - Pagination:
   - Pagination should be implemented.
   - Filtering should update pagination options (i.e. if there are only two pages of Ruby results then the pagination should only show two pages).
+- Testimonial:
+  - Each row should link to an individual testimonial. This page does not need to exist, changing the URL is good enough.
 
 Other notes:
 
 - All filtering of the testimonials should be done at the server-side level via API calls.
-- You are not expected to implement the functionality of the top-bar.
+- You are not expected to implement the functionality of the top-bar, but you may.
+- You are not expected to handle empty or error states, but you may.
+- Consider the audience of Exercism when making choices.
 
-### API Calls
+## API Calls
 
 To get data you can use Exercism's API. There are two endpoints, both which return JSON and neither of which need authentication:
 
-#### Tracks
+### Tracks
 
 You can retrieve the list of all tracks from: https://exercism.org/api/v2/tracks
 
-#### Testimonials
+### Testimonials
 
 Access the testimonials from: https://exercism.org/api/v2/hiring/testimonials
 
@@ -77,5 +94,5 @@ The endpoint returns JSON with the following top-level keys:
 - `testimonials`: An object containing information related to the page of testimonials that is to be rendered.
   - `results`: The testimonials containing the relevant information to render on the UI.
   - `pagination`: Pagination data to allow you to render the pagination section.
-- `tracks`: A list of all tracks that this user has given testimonials on.
-- `track_counts`: An object mapping tracks to the number of testimonials for that track.
+  - `tracks`: A list of all tracks that this user has given testimonials on.
+  - `track_counts`: An object mapping tracks to the number of testimonials for that track.
